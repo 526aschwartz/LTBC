@@ -1,0 +1,26 @@
+.logo {
+  height: 80px;
+  width: 73px;
+} 
+
+.navbar-brand:hover {
+	color: #ff914c;
+}
+
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars {
+   color:#ff914c ;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+  color: #7f4722;
+}
+
+.navbar-scrolled {
+  background-color: #ff914c;
+}
+
+nav{
+    background-color: #503b3b;
+}
