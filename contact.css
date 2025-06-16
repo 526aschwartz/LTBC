@@ -1,0 +1,82 @@
+<style>
+  body {
+    background-color: #f9f9f9;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
+  .form-card {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-card h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333333;
+  }
+
+  .form-card p {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+  }
+
+  .form-card label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #444444;
+  }
+
+  .form-card input,
+  .form-card textarea,
+  .form-card button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .form-card input:focus,
+  .form-card textarea:focus {
+    border-color: #4A90E2;
+    outline: none;
+    box-shadow: 0 0 3px rgba(74, 144, 226, 0.5);
+  }
+
+  .form-card button {
+    background-color: #4A90E2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  .form-card button:hover {
+    background-color: #3a78c4;
+  }
+
+  .form-card .result {
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+  }
+</style>
