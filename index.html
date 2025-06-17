@@ -13,20 +13,23 @@
   <body class="openpage">
 
     <div id="landing-wrapper">
-      <img id="landing-logo" src="imgs/Main Logo.png" alt="logo" />
-      <h1 id="greeting"></h1>
+        <img id="landing-logo"
+            src="imgs/Alternate Logo 2.png"
+            alt="Mets logo" />
+        <h1 id="greeting"></h1>
     </div>
 
     <script>
+        /* Time‑of‑day greeting + 5‑second redirect */
+   
 
+        window.addEventListener("DOMContentLoaded", () => {
+           
+    
 
-      window.addEventListener("DOMContentLoaded", () => {
-       
-
-
-        /* Redirect to home page after 5 s */
-        setTimeout(() => window.location.replace("home.html"), 5000);
-      });
+            /* Redirect to home page after 5 s */
+            setTimeout(() => window.location.replace("home.html"), 5000);
+        });
     </script>
   </body>
   

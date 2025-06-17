@@ -10,6 +10,7 @@ body{
     background-color: white;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 
@@ -49,5 +50,141 @@ body{
     color: white;
 }
 
+#landing-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+}
 
-      
+/* Logo pop‑in */
+#landing-logo {
+  width: 100vh;
+  height: auto;
+  animation: popIn 0.9s ease-out;
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+/* Greeting size */
+#greeting { font-size: clamp(2.5rem, 6vw, 5rem); }
+
+/* Time‑of‑day gradients & colors */
+body.morning   { background: linear-gradient(135deg,#f7f7f7 0%,#e1f3ff 100%); }
+body.afternoon { background: linear-gradient(135deg,#fffaf0 0%,#ffe6cc 100%); }
+body.evening   { background: linear-gradient(135deg,#001b44 0%,#003366 100%); color: #fff; }
+body.night     { background: linear-gradient(135deg,#000000 0%,#001b33 100%); color: #fff; }
+
+
+
+/* cards */
+
+
+
+.review-card {
+  width: 260px;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #7F4722;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  background-color: #fff8f4;
+}
+
+.card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-title {
+  font-family: "agency-fb", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #7F4722;
+  margin-bottom: 0.5rem;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* === ANIMATIONS === */
+@keyframes popIn {
+  0%   { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.review-role {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #7F4722;
+  margin-top: 0.3rem;
+}
+
+
+/* Wrapper to center everything */
+#reviewWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+}
+
+/* Reviews layout */
+#reviewGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.review-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.review-card {
+  width: 260px;
+}
+
+.card {
+  border: 2px solid #7F4722;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #7F4722;
+}
+
+.card-title {
+  color: #7F4722;
+}
+
+.review-role {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #7F4722;
+}
