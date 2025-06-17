@@ -79,69 +79,67 @@
   </nav>
         </header>
         <main>
-                   <div class="flex items-center min-h-screen bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto">
-            <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
-                <div class="text-center">
-                    <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
-                        Contact Us
-                    </h1>
-                    <p class="text-gray-400 dark:text-gray-400">
-                        Fill up the form below to send us a message.
-                    </p>
-                </div>
-                <div class="m-7">
-                    <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-                        <input type="hidden" name="subject" value="New Submission from Web3Forms" />
-                        <input type="checkbox" name="botcheck" id="" style="display: none;" />
 
-                        <div class="mb-6">
-                            <label for="name" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                                Full Name
-                            </label>
-                            <input type="text" name="name" id="name" placeholder="John Doe" required
-                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                        </div>
-                        <div class="mb-6">
-                            <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                                Email Address
-                            </label>
-                            <input type="email" name="email" id="email" placeholder="you@company.com" required
-                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                        </div>
-                        <div class="mb-6">
-                            <label for="phone" class="text-sm text-gray-600 dark:text-gray-400">
-                                Phone Number
-                            </label>
-                            <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" required
-                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                                Your Message
-                            </label>
-                            <textarea rows="5" name="message" id="message" placeholder="Your Message"
-                                class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
-                                required></textarea>
-                        </div>
-                        <div class="mb-6">
-                            <button type="submit"
-                                class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
-                                Send Message
-                            </button>
-                        </div>
-                        <p class="text-base text-center text-gray-400" id="result"></p>
-                    </form>
-                </div>
-            </div>
-        </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="imgs/logo2.png" class="toastpic rounded me-2" alt="..." />
+        <strong class="me-auto">Your message has been sent! </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Our birdies are hard at work to respond back to you soon!
+      </div>
     </div>
+  </div>
+
+  <section class="contactDesign2">
+    <form action="#">
+      <section class="contactInfo">
+        <h1 class="title">Contact Us</h1>
+        <ul class="contactDetails">
+          <li><i class="fas fa-map-marker"></i>Little Bird Toy Company</li>
+          <li><i class="fas fa-envelope"></i>littlebirdcomp@gmail.com</li>
+          <li><i class="fas fa-user-circle"></i>Little Bird Toy Company Team</li>
+          <li><i class="fas fa-mobile-alt"></i>+1 (123)-456-7890</li>
+        </ul>
+      </section>
+      <section class="contactInput">
+        <h1 class="title">Get in Touch</h1>
+        <p>Feel free to drop a line below</p>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <textarea placeholder="Type your message here"></textarea>
+        <button type="button" class="btn" id="liveToastBtn">
+          Send Message
+        </button>
+      </section>
+    </form>
+  </section>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="imgs/logo2.png" class="toastpic rounded me-2" alt="..." />
+        <strong class="me-auto">Your message has been sent! </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Our birdies are hard at work to respond back to you soon!
+      </div>
+    </div>
+  </div>
+  <!-- contact form -->
 </main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
-        <!-- Bootstrap JavaScript Libraries -->
+    <!-- footer -->
+  <footer class="bg-light text-center text-white">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(80, 59, 59, 255)">
+      © 2024 Copyright:
+      <a class="text-white" href="https://github.com/averywh13/LBTCfinal">LittleBirdToyCompany.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

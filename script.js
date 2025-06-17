@@ -1,3 +1,26 @@
+// Add modal container to the body
+const modalContainer = document.createElement("div");
+modalContainer.innerHTML = `
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Content will be dynamically updated -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+document.body.appendChild(modalContainer);
+
+// Product data
 const firstRowPlayers = [
   {
     firstName: "Wooden",
@@ -34,25 +57,16 @@ const secondRowPlayers = [
   }
 ];
 
-// Call renderPlayers with actual row elements instead of IDs
-const row1 = document.getElementById("row1");
-const row2 = document.getElementById("row2");
-
-renderPlayers(firstRowPlayers, row1, 0);
-renderPlayers(secondRowPlayers, row2, firstRowPlayers.length);
-
+// Function to render players
 function renderPlayers(list, rowElement, indexOffset) {
-  // const row = document.getElementById(rowId);  <-- removed this line, now rowElement is passed in
-
-  list.forEach((p, i) => {
+  for (let i = 0; i < list.length; i++) {
+    const p = list[i];
     const globalIndex = indexOffset + i;
 
     const card = document.createElement("div");
     card.className = "card";
 
-    // Use the first photo only (no carousel)
     const photo = p.photos[0];
-
     card.innerHTML = `
       <img src="${photo}" alt="${p.firstName} ${p.lastName}" />
       <div class="card-title">${p.firstName} ${p.lastName}</div>
@@ -66,18 +80,44 @@ function renderPlayers(list, rowElement, indexOffset) {
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
+        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#productModal" id="more-info-${globalIndex}">More Info</button>
       </div>
     `;
 
     rowElement.appendChild(card);
 
     // Quantity change event updates total price
-    const qtySelect = card.querySelector(`#qty-${globalIndex}`);
-    const priceSpan = card.querySelector(`#price-${globalIndex}`);
-    qtySelect.addEventListener("change", () => {
-      const quantity = Number(qtySelect.value);
-      const total = p.price * quantity;
-      priceSpan.textContent = total;
-    });
-  });
+    const qtySelect = document.getElementById(`qty-${globalIndex}`);
+    const priceSpan = document.getElementById(`price-${globalIndex}`);
+    qtySelect.onchange = function () {
+      priceSpan.textContent = p.price * qtySelect.value;
+    };
+
+    // Add event listener to "More Info" button
+    const moreInfoButton = document.getElementById(`more-info-${globalIndex}`);
+    moreInfoButton.onclick = function () {
+      const modalBody = document.getElementById("modalBody");
+      modalBody.innerHTML = `
+        <h6>${p.firstName} ${p.lastName}</h6>
+        <p><strong>Price:</strong> $${p.price}</p>
+        <p><strong>Photos:</strong></p>
+        <div>
+          ${p.photos
+            .map(
+              (photo, index) =>
+                `<img src="${photo}" alt="Photo ${index + 1}" style="width: 50px; margin: 5px;">`
+            )
+            .join("")}
+        </div>
+        <p>This is a beautiful handcrafted wooden ${p.lastName}. Perfect for kids and collectors alike!</p>
+      `;
+    };
+  }
 }
+
+// Render players
+const row1 = document.getElementById("row1");
+const row2 = document.getElementById("row2");
+
+renderPlayers(firstRowPlayers, row1, 0);
+renderPlayers(secondRowPlayers, row2, firstRowPlayers.length);

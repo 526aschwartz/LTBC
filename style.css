@@ -87,14 +87,22 @@ body.night     { background: linear-gradient(135deg,#000000 0%,#001b33 100%); co
       overflow: hidden;
 }
 
-#reviewRowTop,
-#reviewRowBottom {
+#reviewRowTop {
   display: flex;
   justify-content: center;
   gap: 1rem; /* space between cards */
   flex-wrap: wrap;
   margin: 2rem ;
   margin-top: 200px;
+   
+}
+
+#reviewRowBottom {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* space between cards */
+  flex-wrap: wrap;
+  margin: 2rem ;
    
 }
 
@@ -164,3 +172,4 @@ body.night     { background: linear-gradient(135deg,#000000 0%,#001b33 100%); co
     margin-bottom: 1.5rem;
   }
 }
+

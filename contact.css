@@ -1,87 +1,131 @@
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+/* contact form */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500,700");
+@import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
 
-  .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    background-color: #7f4722;;
-  }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box
+}
+a {
+  text-decoration: none;
+  color: inherit
+}
 
-  .form-card {
-    width: 100%;
-    max-width: 500px;
-    background: #7f4722;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
 
-  .form-card h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #333333;
-  }
+.contactDesign2 {
+  height: 100vh;
+  display: flex;
+}
 
-  .form-card p {
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 20px;
-  }
+.contactDesign2 form {
+  background: #fff;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  padding: 50px 0 50px 50px;
+  position: relative;
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-  .form-card label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #444444;
-  }
+.contactDesign2 form .title {
+  font-size: 1.75em;
+  font-weight: 300
+}
 
-  .form-card input,
-  .form-card textarea,
-  .form-card button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    font-size: 14px;
-    font-family: inherit;
-  }
+.contactDesign2 form .contactInfo {
+  background: #7f4722;
+  width: 300px;
+  position: absolute;
+  left: -80px;
+  padding: 1.25em 1.25em 2.5em 1.25em;
+  color: #fafafa;
+  height: 80%
+}
 
-  .form-card input:focus,
-  .form-card textarea:focus {
-    border-color: #4A90E2;
-    outline: none;
-    box-shadow: 0 0 3px rgba(74, 144, 226, 0.5);
-  }
+.contactDesign2 form .contactInfo .title {
+  margin-bottom: 1.25em
+}
 
-  .form-card button {
-    background-color: #4A90E2;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-  }
+.contactDesign2 form .contactInfo ul {
+  list-style: none
+}
 
-  .form-card button:hover {
-    background-color: #3a78c4;
-  }
+.contactDesign2 form .contactInfo .contactDetails li {
+  margin-bottom: 2em
+}
 
-  .form-card .result {
-    text-align: center;
-    font-size: 12px;
-    color: #999999;
-  }
+.contactDesign2 form .contactInfo .contactDetails i {
+  margin-right: 1em
+}
 
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.contactDesign2 form .contactInfo .socialMedia {
+  margin-top: 2.5em
+}
+
+.contactDesign2 form .contactInfo .socialMedia li {
+  display: inline;
+  padding: 1.25em
+}
+
+.contactDesign2 form .contactInfo .socialMedia li a:hover {
+  color: #7f4722;
+}
+
+.contactDesign2 form .contactInput {
+  margin-left: 200px;
+  padding-top: 1.25em;
+  width: 100%;
+  padding-right: 3em
+}
+
+.contactDesign2 form .contactInput .title {
+  margin-bottom: .25em
+}
+
+.contactDesign2 form .contactInput p {
+  margin-bottom: 1.25em
+}
+
+.contactDesign2 form .contactInput input {
+  margin-bottom: 1.25em;
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  background: rgba(200, 200, 200, 0.3);
+  border: 0;
+  color: #333;
+  height: 40px;
+  padding-left: .75em
+}
+
+.contactDesign2 form .contactInput textarea {
+  margin-bottom: 1.25em;
+  display: block;
+  padding: 1em;
+  resize: none;
+  background: rgba(200, 200, 200, 0.3);
+  border: 0;
+  height: 120px;
+  width: 100%;
+  font-size: 1em
+}
+
+.contactDesign2 form .contactInput button {
+  background: #7f4722;
+  border-radius: 50px;
+  width: 120px;
+  border: 0;
+  text-transform: uppercase;
+  color: #fafafa;
+  font-size: 1.25em;
+  height: 40px
 }
