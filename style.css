@@ -182,7 +182,7 @@ body.night     { background: linear-gradient(135deg,#000000 0%,#001b33 100%); co
   background-color: #8ed4ec;
 }
 
-.hotel {
+.hotel, .title {
   font-family: "pinot-grigio-modern", sans-serif;
   font-weight: 700;
   font-style: normal;
