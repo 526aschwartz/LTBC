@@ -1,16 +1,23 @@
-// Add modal container to the body
+// ----------------------
+// CREATE MODAL CONTAINER
+// ----------------------
+
+// Create a modal container dynamically and append it to the document body
 const modalContainer = document.createElement("div");
 modalContainer.innerHTML = `
   <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+        <!-- Modal Header -->
         <div class="modal-header">
           <h5 class="modal-title" id="productModalLabel">Product Details</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <!-- Modal Body (content added dynamically) -->
         <div class="modal-body" id="modalBody">
           <!-- Content will be dynamically updated -->
         </div>
+        <!-- Modal Footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
@@ -18,9 +25,15 @@ modalContainer.innerHTML = `
     </div>
   </div>
 `;
+
+// Append the modal HTML to the body so it can be triggered via Bootstrap
 document.body.appendChild(modalContainer);
 
-// Product data
+// -----------------
+// PRODUCT DATA SETS
+// -----------------
+
+// First row of products
 const firstRowPlayers = [
   {
     firstName: "Wooden",
@@ -42,6 +55,7 @@ const firstRowPlayers = [
   }
 ];
 
+// Second row of products
 const secondRowPlayers = [
   {
     firstName: "Wooden",
@@ -57,21 +71,30 @@ const secondRowPlayers = [
   }
 ];
 
-// Function to render players
+// --------------------------
+// FUNCTION TO RENDER CARDS
+// --------------------------
+
 function renderPlayers(list, rowElement, indexOffset) {
   for (let i = 0; i < list.length; i++) {
     const p = list[i];
-    const globalIndex = indexOffset + i;
+    const globalIndex = indexOffset + i; // Unique index for element IDs
 
+    // Create a card container
     const card = document.createElement("div");
     card.className = "card";
 
+    // Use the first image from the photo list for the card preview
     const photo = p.photos[0];
+
+    // Define the card's inner HTML
     card.innerHTML = `
       <img src="${photo}" alt="${p.firstName} ${p.lastName}" />
       <div class="card-title">${p.firstName} ${p.lastName}</div>
       <div class="card-body">
         <p>Price: $<span id="price-${globalIndex}">${p.price}</span></p>
+
+        <!-- Quantity selection dropdown -->
         <label for="qty-${globalIndex}">Quantity:</label><br />
         <select id="qty-${globalIndex}" style="width: 60%; margin: 0 auto;">
           <option value="1" selected>1</option>
@@ -80,23 +103,38 @@ function renderPlayers(list, rowElement, indexOffset) {
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
-        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#productModal" id="more-info-${globalIndex}">More Info</button>
+
+        <!-- Button to open modal with more info -->
+        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#productModal" id="more-info-${globalIndex}">
+          More Info
+        </button>
       </div>
     `;
 
+    // Append card to the row container
     rowElement.appendChild(card);
 
-    // Quantity change event updates total price
+    // -------------------------
+    // HANDLE QUANTITY CHANGE
+    // -------------------------
+
+    // Update total price when quantity changes
     const qtySelect = document.getElementById(`qty-${globalIndex}`);
     const priceSpan = document.getElementById(`price-${globalIndex}`);
     qtySelect.onchange = function () {
       priceSpan.textContent = p.price * qtySelect.value;
     };
 
-    // Add event listener to "More Info" button
+    // ------------------------
+    // HANDLE "MORE INFO" CLICK
+    // ------------------------
+
+    // Show product info in modal when "More Info" button is clicked
     const moreInfoButton = document.getElementById(`more-info-${globalIndex}`);
     moreInfoButton.onclick = function () {
       const modalBody = document.getElementById("modalBody");
+
+      // Populate modal body with product details and thumbnails
       modalBody.innerHTML = `
         <h6>${p.firstName} ${p.lastName}</h6>
         <p><strong>Price:</strong> $${p.price}</p>
@@ -115,9 +153,13 @@ function renderPlayers(list, rowElement, indexOffset) {
   }
 }
 
-// Render players
-const row1 = document.getElementById("row1");
-const row2 = document.getElementById("row2");
+// -----------------------------
+// RENDER ALL PRODUCT CATEGORIES
+// -----------------------------
 
+const row1 = document.getElementById("row1"); // First row container
+const row2 = document.getElementById("row2"); // Second row container
+
+// Render both rows, keeping track of index offsets to avoid ID conflicts
 renderPlayers(firstRowPlayers, row1, 0);
 renderPlayers(secondRowPlayers, row2, firstRowPlayers.length);
