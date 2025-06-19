@@ -190,3 +190,21 @@ body.night     { background: linear-gradient(135deg,#000000 0%,#001b33 100%); co
   font-size: 60px;
   color: white;
 }
+
+.name {
+  font-family: "pinot-grigio-modern", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.nav-item {
+   font-family: "century-gothic", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.bio {
+font-family: "century-gothic", sans-serif;
+font-weight: 400;
+font-style: normal;
+}

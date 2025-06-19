@@ -31,6 +31,9 @@ a {
   padding-bottom: 10px;
   padding-left: 10px;
   line-height: 25px;
+ font-family: "century-gothic", sans-serif;
+font-weight: 400;
+font-style: normal;
 }
 
 .responsive-container-block.bigContainer {
@@ -205,6 +208,9 @@ a {
   line-height: 26px;
   color: white;
   margin-bottom: 10px;
+ font-family: "century-gothic", sans-serif;
+font-weight: 400;
+font-style: normal;
 }
 
 .ultimateImg {
